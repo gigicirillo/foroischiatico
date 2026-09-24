@@ -1,2 +1,2 @@
-frames/
-assets/anchor.png
+__pycache__/
+.DS_Store

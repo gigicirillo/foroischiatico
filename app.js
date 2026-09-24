@@ -98,9 +98,6 @@ function loop(time){
  }
  requestAnimationFrame(loop);
 }
-$('.menu-toggle').addEventListener('click',()=>{const open=$('.menu-toggle').getAttribute('aria-expanded')!=='true';$('.menu-toggle').setAttribute('aria-expanded',open);$('.menu-toggle').setAttribute('aria-label',open?'Chiudi menu':'Apri menu');$('#mobile-menu').hidden=!open;});
-$('#mobile-menu').querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{$('#mobile-menu').hidden=true;$('.menu-toggle').setAttribute('aria-expanded','false');$('.menu-toggle').setAttribute('aria-label','Apri menu');}));
-document.addEventListener('keydown',e=>{if(e.key==='Escape'){$('#mobile-menu').hidden=true;$('.menu-toggle').setAttribute('aria-expanded','false');$('.menu-toggle').setAttribute('aria-label','Apri menu');}});
 $('.motion-toggle').addEventListener('click',()=>{
  paused=!paused;const b=$('.motion-toggle');b.textContent=paused?'Riprendi animazioni ▷':'Pausa animazioni Ⅱ';b.setAttribute('aria-label',paused?'Riprendi le animazioni':'Metti in pausa le animazioni');
  document.querySelectorAll('video').forEach(v=>{if(paused)v.pause();else if(v.src&&!prefersReduced())v.play().catch(()=>{});});
