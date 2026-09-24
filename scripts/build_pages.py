@@ -73,7 +73,7 @@ def update_home():
     text=text.replace('assets/logo.svg','assets/logo-bianco.png')
     text=text.replace('LE NOSTRE SPECIALITÀ','I NOSTRI SERVIZI').replace('Le specialità','Servizi')
     text=text.replace('https://cdn.jsdelivr.net/npm/lenis@1.3.17/dist/lenis.min.js','assets/vendor/lenis.min.js')
-    if 'href="site.css"' not in text: text=text.replace('<link rel="stylesheet" href="style.css">','<link rel="stylesheet" href="style.css"><link rel="stylesheet" href="site.css">')
+    if 'href="site.css' not in text: text=text.replace('<link rel="stylesheet" href="style.css">','<link rel="stylesheet" href="style.css"><link rel="stylesheet" href="site.css">')
     if 'src="site.js"' not in text: text=text.replace('<script defer src="app.js"></script>','<script defer src="app.js"></script><script defer src="site.js"></script>')
     text=re.sub(r'<a class="skip".*?</a>','',text,count=1)
     text=re.sub(r'<header class="header">.*?</nav>\s*<main',header()+'\n<main',text,count=1,flags=re.S)

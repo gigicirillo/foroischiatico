@@ -89,7 +89,7 @@ function loop(time){
  if(visible)paint(active,Math.round(frame));
  const r=sections[1].getBoundingClientRect(),jp=clamp(-r.top/(sections[1].offsetHeight-innerHeight));
  document.body.style.backgroundColor=bg(jp);
- sections[1].querySelector('.scene').style.backgroundColor=bg(jp);
+ sections[1].querySelector('.visual').style.backgroundColor=bg(jp);
  sections[1].querySelector('.visual').style.filter=`brightness(${1-jp*.5})`;
  $('#progress').textContent=Math.round(jp*100);
  $('.meter-track i').style.width=`${jp*100}%`;
